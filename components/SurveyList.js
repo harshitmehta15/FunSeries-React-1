@@ -3,6 +3,7 @@ var SurveyItem = require('./SurveyItem');
 
 var SurveyList = React.createClass({
   // the Surveylist component ,url attribute get from outside
+
   getInitialState: function(){
     return {
       data: []
@@ -26,8 +27,8 @@ var SurveyList = React.createClass({
   render: function(){
     return (
       <div>
-      {this.state.data.map(function(obj){
-        return <SurveyItem item={obj}/>;
+      {this.state.data.map(function(obj,i){
+        return <SurveyItem item={obj} key={i} onShowDes={this.onShowDes}/>;
       })}
       </div>
     );
